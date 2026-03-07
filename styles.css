@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #0d233a;
+    --secondary-color: #2b6cb0;
+    --accent-color: #e53e3e;
+    --text-color: #2d3748;
+    --bg-color: #f7fafc;
+    --completed-bg: #276749; /* Deep Green for WCAG AA */
+    --completed-text: #ffffff;
+    --card-bg: #ffffff;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+/* Navigation */
+nav {
+    background-color: #1a365d;
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.nav-menu li {
+    text-align: center;
+}
+
+.nav-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.certificate-container {
+    padding: 1rem 0;
+}
+
+.certificate-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #2c5282;
+}
+
+.filter-btn.active {
+    background-color: var(--secondary-color);
+}
+
+/* Course Grid */
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Course Card */
+.course-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.course-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+/* Completed Course Card Style */
+.course-card.completed {
+    background-color: var(--completed-bg);
+    color: var(--completed-text);
+    border-left: 5px solid #1c4532;
+}
+
+.course-card.completed h3,
+.course-card.completed p,
+.course-card.completed strong {
+    color: var(--completed-text);
+}
+
+.credits-info {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: #edf2f7;
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.footer-content span, .footer-content p {
+    color: #e2e8f0;
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 600px) {
+    .nav-menu {
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .nav-menu {
+        max-width: 800px;
+    }
+}
