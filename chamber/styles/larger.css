@@ -1,0 +1,61 @@
+/* Media Queries for larger screens (larger.css) */
+@media screen and (min-width: 768px) {
+    /* Header & Nav */
+    .hamburger {
+        display: none; /* Hide hamburger menu */
+    }
+
+    nav {
+        display: block;
+        width: auto;
+        margin-top: 0;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        border-bottom: none;
+    }
+
+    nav a {
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Grid View on Larger Screens */
+    #members-container.grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* List View on Larger Screens */
+    #members-container.list .member-card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #members-container.list .member-card h3,
+    #members-container.list .member-card p,
+    #members-container.list .member-card a {
+        flex: 1;
+        margin: 0;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* Larger desktop grid */
+    #members-container.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Adjust footer layout */
+    footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: left;
+    }
+}
