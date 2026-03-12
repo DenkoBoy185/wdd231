@@ -4,7 +4,7 @@
     "address": "123 Innovation Way, Tech City",
     "phone": "555-0100",
     "websiteUrl": "https://techsolutions.example.com",
-    "imageFileName": "tech-solutions.webp",
+    "imageFileName": "tech-solutions.png",
     "membershipLevel": 3
   },
   {
@@ -12,7 +12,7 @@
     "address": "456 Main St, Food Town",
     "phone": "555-0200",
     "websiteUrl": "https://localbakery.example.com",
-    "imageFileName": "local-bakery.webp",
+    "imageFileName": "local-bakery.png",
     "membershipLevel": 1
   },
   {
@@ -20,7 +20,7 @@
     "address": "789 Garage Rd, Motorville",
     "phone": "555-0300",
     "websiteUrl": "https://quickfix.example.com",
-    "imageFileName": "quick-fix.webp",
+    "imageFileName": "quick-fix.png",
     "membershipLevel": 2
   },
   {
@@ -28,7 +28,7 @@
     "address": "101 Nature Path, Greenfield",
     "phone": "555-0400",
     "websiteUrl": "https://greenthumb.example.com",
-    "imageFileName": "green-thumb.webp",
+    "imageFileName": "green-thumb.png",
     "membershipLevel": 1
   },
   {
@@ -36,7 +36,7 @@
     "address": "202 Financial Blvd, Cashville",
     "phone": "555-0500",
     "websiteUrl": "https://citycore.example.com",
-    "imageFileName": "city-core.webp",
+    "imageFileName": "city-core.png",
     "membershipLevel": 3
   },
   {
@@ -44,7 +44,7 @@
     "address": "303 Creative Ave, Design District",
     "phone": "555-0600",
     "websiteUrl": "https://pixelperfect.example.com",
-    "imageFileName": "pixel-perfect.webp",
+    "imageFileName": "pixel-perfect.png",
     "membershipLevel": 2
   },
   {
@@ -52,7 +52,7 @@
     "address": "404 Morning St, Bean City",
     "phone": "555-0700",
     "websiteUrl": "https://sunrisecoffee.example.com",
-    "imageFileName": "sunrise-coffee.webp",
+    "imageFileName": "sunrise-coffee.png",
     "membershipLevel": 1
   }
 ]
