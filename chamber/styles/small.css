@@ -25,7 +25,7 @@ body {
 /* Header & Nav */
 header {
     background-color: var(--primary-color);
-    color: white;
+    color: #ffffff;
     padding: 1rem;
     position: relative;
     display: flex;
@@ -53,7 +53,7 @@ header h1 {
 .hamburger {
     background: none;
     border: none;
-    color: white;
+    color: #ffffff;
     font-size: 2rem;
     cursor: pointer;
 }
@@ -76,12 +76,12 @@ nav ul {
 
 nav li {
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid #ffffff33;
 }
 
 nav a {
     display: block;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     padding: 1rem;
 }
@@ -113,7 +113,7 @@ h2 {
     padding: 0.5rem 1rem;
     margin: 0 0.25rem;
     background-color: var(--primary-color);
-    color: white;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -121,7 +121,7 @@ h2 {
 
 .view-btn:hover {
     background-color: var(--secondary-color);
-    color: black;
+    color: #000000;
 }
 
 /* Members Container (Default: Grid layout, but single column on mobile) */
@@ -138,7 +138,7 @@ h2 {
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px #0000001a;
 }
 
 .member-card img {
@@ -181,7 +181,7 @@ h2 {
 /* Footer */
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 2rem 1rem;
     margin-top: 2rem;
