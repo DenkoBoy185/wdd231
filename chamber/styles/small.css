@@ -156,6 +156,17 @@ h2 {
     margin: 0.5rem 0;
 }
 
+.member-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.member-card a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
 /* List View Styles */
 #members-container.list {
     display: block;

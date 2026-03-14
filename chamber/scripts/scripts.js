@@ -66,12 +66,19 @@ function displayMembers(members) {
         website.setAttribute('target', '_blank');
         website.textContent = 'Website';
 
+        const membership = document.createElement('p');
+        let levelName = 'Member';
+        if (member.membershipLevel === 2) levelName = 'Silver';
+        if (member.membershipLevel === 3) levelName = 'Gold';
+        membership.innerHTML = `<strong>Level:</strong> ${levelName}`;
+
         // Append elements to card
         card.appendChild(img);
         card.appendChild(h3);
         card.appendChild(address);
         card.appendChild(phone);
         card.appendChild(website);
+        card.appendChild(membership);
 
         // Append card to container
         membersContainer.appendChild(card);
