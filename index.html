@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 231 - Web Frontend Development I - Bruno Monsefu's Course Home Page">
+    <meta name="author" content="Bruno Monsefu">
+    <title>Bruno Monsefu - WDD 231 Course Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/profile.jpg" alt="Profile picture of Bruno Monsefu" class="profile-img">
+            <h1>Bruno Monsefu - WDD 231 Course Home Page</h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="https://github.com/DenkoBoy185" target="_blank">GitHub Profile</a></li>
+                <li><a href="https://www.linkedin.com/in/bruno-monsefu-38a6b0391/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>Hello! I'm Bruno Monsefu. I love building intuitive web experiences and growing my skills as a developer.</p>
+        </section>
+
+        <section class="banner">
+            <h2>Course Work</h2>
+        </section>
+
+        <section class="certificate-container">
+            <h2>Web Development Certificate</h2>
+            
+            <div class="filter-buttons">
+                <button id="btn-all" class="filter-btn active">All</button>
+                <button id="btn-cse" class="filter-btn">CSE</button>
+                <button id="btn-wdd" class="filter-btn">WDD</button>
+            </div>
+
+            <div id="course-container" class="course-grid">
+                <!-- Courses injected here -->
+            </div>
+
+            <div class="credits-info">
+                <h3>Total Credits: <span id="total-credits">0</span></h3>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="currentyear"></span> | Bruno | WDD 231 Web Frontend Development I</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
