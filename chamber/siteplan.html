@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site Plan for the Chamber of Commerce website — WDD 231 W05 Project by Bruno Emerson Monsefu Gonzales.">
+    <meta name="author" content="Bruno Emerson Monsefu Gonzales">
+    <title>Chamber of Commerce — Site Plan | Bruno Monsefu | WDD 231</title>
+
+    <!-- Google Fonts: Roboto (body) + Montserrat (headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           CSS Custom Properties — Color Schema & Typography
+        ========================================================= */
+        :root {
+            /* Primary: Deep Navy Blue — used for header, headings, footer, nav */
+            --color-primary: #0b3d91;
+            /* Accent: Amber Gold — used for highlights, CTAs, section accents */
+            --color-accent: #fca311;
+            /* Background: Soft Off-White — used for page background */
+            --color-bg: #f4f4f9;
+            /* Card background */
+            --color-card: #ffffff;
+            /* Dark text */
+            --color-text: #1a1a2e;
+            /* Muted text */
+            --color-muted: #555577;
+            /* Border */
+            --color-border: #dde3f0;
+
+            /* Typography */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        /* =========================================================
+           Reset & Base
+        ========================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* =========================================================
+           Header
+        ========================================================= */
+        header {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            padding: 2rem 1.5rem 1.5rem;
+            text-align: center;
+            border-bottom: 6px solid var(--color-accent);
+        }
+
+        header h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.6rem, 4vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+        }
+
+        header p.subtitle {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.75);
+            font-family: var(--font-body);
+        }
+
+        /* =========================================================
+           Navigation / TOC
+        ========================================================= */
+        nav.toc {
+            background-color: var(--color-primary);
+            padding: 0.75rem 1.5rem;
+        }
+
+        nav.toc ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            justify-content: center;
+        }
+
+        nav.toc a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s;
+        }
+
+        nav.toc a:hover {
+            opacity: 0.75;
+            text-decoration: underline;
+        }
+
+        /* =========================================================
+           Main Layout
+        ========================================================= */
+        main {
+            max-width: 900px;
+            margin: 2.5rem auto;
+            padding: 0 1.25rem 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        /* =========================================================
+           Section Cards
+        ========================================================= */
+        .plan-section {
+            background-color: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2rem 2.25rem;
+            box-shadow: 0 4px 18px rgba(11, 61, 145, 0.07);
+            scroll-margin-top: 1rem;
+        }
+
+        .plan-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            border-left: 5px solid var(--color-accent);
+            padding-left: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .plan-section p,
+        .plan-section li {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            font-size: 0.98rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .plan-section ul {
+            padding-left: 1.4rem;
+        }
+
+        /* =========================================================
+           Section number badges
+        ========================================================= */
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 0.78rem;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            margin-right: 0.4rem;
+            flex-shrink: 0;
+            vertical-align: middle;
+        }
+
+        /* =========================================================
+           1. Site Name
+        ========================================================= */
+        .site-name-display {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            background: linear-gradient(135deg, #eef2ff, #dce8ff);
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            padding: 0.5rem 1.2rem;
+            margin: 0.75rem 0;
+            letter-spacing: -0.5px;
+        }
+
+        /* =========================================================
+           Color Schema
+        ========================================================= */
+        .color-swatches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .swatch-card {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            min-width: 160px;
+            flex: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .swatch-color {
+            height: 70px;
+        }
+
+        .swatch-info {
+            padding: 0.75rem 1rem;
+            background: #fff;
+        }
+
+        .swatch-info strong {
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .swatch-info code {
+            font-size: 0.82rem;
+            color: var(--color-muted);
+            background: var(--color-bg);
+            padding: 0.1rem 0.35rem;
+            border-radius: 3px;
+        }
+
+        .swatch-info p {
+            font-size: 0.82rem;
+            color: var(--color-muted);
+            margin-top: 0.4rem;
+            margin-bottom: 0;
+        }
+
+        /* =========================================================
+           Typography
+        ========================================================= */
+        .font-demo {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .font-demo-card {
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .font-demo-card .font-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-muted);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-body);
+        }
+
+        .font-heading-sample {
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .font-body-sample {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           Scenarios
+        ========================================================= */
+        .scenario-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .scenario-item {
+            background: linear-gradient(135deg, #f0f4ff, #e8edff);
+            border-left: 4px solid var(--color-accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.25rem;
+        }
+
+        .scenario-item p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--color-text);
+        }
+
+        /* =========================================================
+           Wireframes
+        ========================================================= */
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .wireframe-grid {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        .wireframe-box {
+            border: 2px dashed var(--color-border);
+            border-radius: 8px;
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        .wireframe-box figcaption {
+            font-family: var(--font-heading);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+        }
+
+        .wireframe-box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+
+        /* =========================================================
+           Footer
+        ========================================================= */
+        footer {
+            background-color: var(--color-primary);
+            color: rgba(255,255,255,0.85);
+            text-align: center;
+            padding: 1.75rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            border-top: 4px solid var(--color-accent);
+        }
+
+        footer p {
+            margin-bottom: 0.3rem;
+        }
+
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================================================
+           Responsive
+        ========================================================= */
+        @media (min-width: 700px) {
+            .plan-section {
+                padding: 2.25rem 2.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== HEADER ====== -->
+    <header>
+        <h1>Chamber of Commerce — Site Plan</h1>
+        <p class="subtitle">WDD 231 | W05 Project | Bruno Emerson Monsefu Gonzales</p>
+    </header>
+
+    <!-- ====== TABLE OF CONTENTS NAV ====== -->
+    <nav class="toc" aria-label="Site Plan Table of Contents">
+        <ul>
+            <li><a href="#site-name">Site Name</a></li>
+            <li><a href="#site-purpose">Site Purpose</a></li>
+            <li><a href="#scenarios">Scenarios</a></li>
+            <li><a href="#color-schema">Color Schema</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#wireframe">Wireframe</a></li>
+        </ul>
+    </nav>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main>
+
+        <!-- ============================
+             SECTION 1: SITE NAME
+        ============================= -->
+        <section id="site-name" class="plan-section">
+            <h2><span class="section-badge">1</span> Site Name</h2>
+
+            <div class="site-name-display">Chamber of Commerce</div>
+
+            <p>
+                The name <strong>Chamber of Commerce</strong> was chosen because it instantly communicates the
+                site's core purpose: serving as the digital hub for a local business community organization.
+                "Chamber of Commerce" is a universally recognized term that implies professional networking,
+                business support, and community advocacy — all key goals of the site. The name is authoritative,
+                trustworthy, and immediately understandable to both local business owners and residents seeking
+                information about local commerce.
+            </p>
+        </section>
+
+        <!-- ============================
+             SECTION 2: SITE PURPOSE
+        ============================= -->
+        <section id="site-purpose" class="plan-section">
+            <h2><span class="section-badge">2</span> Site Purpose</h2>
+
+            <p>The Chamber of Commerce website will serve multiple important purposes for the local business community:</p>
+            <ul>
+                <li>
+                    <strong>Business Directory:</strong> Provide a searchable, filterable directory of local
+                    member businesses including contact information, membership level, and website links,
+                    so residents can easily find and support local companies.
+                </li>
+                <li>
+                    <strong>Membership Recruitment:</strong> Enable local businesses to apply for Chamber
+                    membership online through a structured form, clearly explaining the benefits of Bronze,
+                    Silver, and Gold membership tiers.
+                </li>
+                <li>
+                    <strong>Community Information Hub:</strong> Aggregate local weather forecasts, upcoming
+                    community events, and featured business spotlights on the home page to keep residents
+                    and business owners informed and engaged.
+                </li>
+                <li>
+                    <strong>Economic Discovery:</strong> Showcase unique aspects of the local area — including
+                    attractions, demographics, and economic facts — to encourage tourism, relocation, and
+                    new business investment.
+                </li>
+            </ul>
+        </section>
+
+        <!-- ============================
+             SECTION 3: SCENARIOS
+        ============================= -->
+        <section id="scenarios" class="plan-section">
+            <h2><span class="section-badge">3</span> Scenarios</h2>
+
+            <p>
+                The following scenario questions represent the typical needs and motivations of our target
+                audience — local business owners and community residents — when they visit the Chamber of
+                Commerce website:
+            </p>
+
+            <ol class="scenario-list">
+                <li class="scenario-item">
+                    <p>
+                        "I just opened a bakery downtown. How do I officially join the Chamber of Commerce
+                        and what benefits will my business receive as a member — especially for networking
+                        events and promotional visibility?"
+                    </p>
+                </li>
+                <li class="scenario-item">
+                    <p>
+                        "I'm looking for a reliable local electrician recommended by other Chamber members.
+                        Can I search the business directory by category or name to find verified businesses
+                        in my area?"
+                    </p>
+                </li>
+                <li class="scenario-item">
+                    <p>
+                        "I'm thinking about relocating my company to this city. What are the local economic
+                        conditions, demographics, and community highlights that make this a good place to
+                        establish and grow a business?"
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ============================
+             SECTION 4: COLOR SCHEMA
+        ============================= -->
+        <section id="color-schema" class="plan-section">
+            <h2><span class="section-badge">4</span> Color Schema</h2>
+
+            <p>
+                The Chamber of Commerce website uses a two-color primary palette of <strong>Deep Navy Blue</strong>
+                and <strong>Amber Gold</strong>, complemented by a neutral off-white background. This combination
+                conveys professionalism, trust, and community warmth.
+            </p>
+
+            <div class="color-swatches">
+
+                <div class="swatch-card">
+                    <div class="swatch-color" style="background-color: #0b3d91;"></div>
+                    <div class="swatch-info">
+                        <strong>Deep Navy Blue</strong>
+                        <code>#0b3d91</code>
+                        <p>Used for: header background, footer background, section headings, nav bar, card title text, and primary buttons.</p>
+                    </div>
+                </div>
+
+                <div class="swatch-card">
+                    <div class="swatch-color" style="background-color: #fca311;"></div>
+                    <div class="swatch-info">
+                        <strong>Amber Gold</strong>
+                        <code>#fca311</code>
+                        <p>Used for: call-to-action buttons, nav hover states, card accent borders, section highlights, and icon accents.</p>
+                    </div>
+                </div>
+
+                <div class="swatch-card">
+                    <div class="swatch-color" style="background-color: #f4f4f9;"></div>
+                    <div class="swatch-info">
+                        <strong>Soft Off-White</strong>
+                        <code>#f4f4f9</code>
+                        <p>Used for: page body background, card input field backgrounds, and alternating row backgrounds in the directory.</p>
+                    </div>
+                </div>
+
+                <div class="swatch-card">
+                    <div class="swatch-color" style="background-color: #ffffff; border-bottom: 1px solid #dde3f0;"></div>
+                    <div class="swatch-info">
+                        <strong>Pure White</strong>
+                        <code>#ffffff</code>
+                        <p>Used for: card backgrounds, modal dialogs, form inputs, header text, and nav link text.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================
+             SECTION 5: TYPOGRAPHY
+        ============================= -->
+        <section id="typography" class="plan-section">
+            <h2><span class="section-badge">5</span> Typography</h2>
+
+            <p>
+                The site uses two complementary Google Fonts to balance authority and readability across all
+                device sizes:
+            </p>
+
+            <div class="font-demo">
+
+                <div class="font-demo-card">
+                    <p class="font-label">Heading Font — Applied to: page title, section headings (h1–h3), navigation links, card titles, and button labels</p>
+                    <div class="font-heading-sample">Montserrat — Bold &amp; Confident</div>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: var(--color-muted); margin-top: 0.5rem;">
+                        ABCDEFGHIJKLMNOPQRSTUVWXYZ · abcdefghijklmnopqrstuvwxyz · 0123456789
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--color-muted); margin-top: 0.4rem;">
+                        <strong>Weights used:</strong> 600 (semibold), 700 (bold), 800 (extrabold) ·
+                        <strong>Rationale:</strong> Montserrat's geometric shapes project confidence and professionalism, ideal for a business organization's branding.
+                    </p>
+                </div>
+
+                <div class="font-demo-card">
+                    <p class="font-label">Body Font — Applied to: paragraph text, list items, form labels, footer text, and descriptive captions</p>
+                    <div class="font-body-sample">Roboto — Readable &amp; Modern</div>
+                    <p style="font-family: 'Roboto', sans-serif; font-size: 0.9rem; color: var(--color-muted); margin-top: 0.5rem;">
+                        ABCDEFGHIJKLMNOPQRSTUVWXYZ · abcdefghijklmnopqrstuvwxyz · 0123456789
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--color-muted); margin-top: 0.4rem;">
+                        <strong>Weights used:</strong> 400 (regular), 500 (medium), 700 (bold) ·
+                        <strong>Rationale:</strong> Roboto is a versatile humanist sans-serif optimized for on-screen reading, ensuring body text is comfortable and scannable at all sizes.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================
+             SECTION 6: WIREFRAME
+        ============================= -->
+        <section id="wireframe" class="plan-section">
+            <h2><span class="section-badge">6</span> Wireframe</h2>
+
+            <p>
+                The following wireframes illustrate the planned layout of the Chamber of Commerce home page
+                for both <strong>mobile (small screen)</strong> and <strong>desktop (wider screen)</strong>
+                viewports, following a mobile-first design approach.
+            </p>
+
+            <div class="wireframe-grid">
+
+                <div class="wireframe-box">
+                    <figure>
+                        <img
+                            src="images/wireframe-mobile.png"
+                            alt="Mobile wireframe: stacked layout with header, hero, Events card, Weather card, Spotlights card, and footer"
+                            width="400"
+                            height="500"
+                        >
+                        <figcaption>📱 Mobile View (&lt;768px)</figcaption>
+                    </figure>
+                </div>
+
+                <div class="wireframe-box">
+                    <figure>
+                        <img
+                            src="images/wireframe-desktop.png"
+                            alt="Desktop wireframe: wide horizontal header with nav, full-width hero, three-column card grid, two-column footer"
+                            width="700"
+                            height="420"
+                        >
+                        <figcaption>🖥️ Desktop View (≥768px)</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+            <div style="margin-top:1.5rem;">
+                <h3 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 1rem; margin-bottom: 0.75rem;">Layout Description</h3>
+                <ul>
+                    <li><strong>Mobile:</strong> Single-column stacked layout. Navigation collapses into a hamburger menu. Cards for Events, Weather, and Spotlights stack vertically for easy thumb scrolling.</li>
+                    <li><strong>Desktop:</strong> Horizontal header with logo, site title, and inline navigation. Hero image spans full width. The three content cards (Events, Weather, Spotlights) appear in a three-column grid. Footer is split into two columns for info and metadata.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Bruno Emerson Monsefu Gonzales | WDD 231</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+        <p><a href="index.html">← Chamber Home</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
+
+</body>
+</html>
