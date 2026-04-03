@@ -1,0 +1,221 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Discover Page Styles  (discover.css)
+   Mobile-first, with named grid areas at 3 breakpoints
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Page Hero / Intro ─────────────────────────────────────────── */
+.discover-main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.discover-main h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 0.25rem;
+    font-size: 2rem;
+}
+
+.discover-intro {
+    text-align: center;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ─── Visit Banner ──────────────────────────────────────────────── */
+.visit-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1a5fbd 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 0.9rem 1.25rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(11, 61, 145, 0.25);
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.visit-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.visit-banner p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ─── Cards Section ─────────────────────────────────────────────── */
+.cards-section {
+    margin-bottom: 2rem;
+}
+
+/* ─── Individual Card ───────────────────────────────────────────── */
+.discover-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discover-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.discover-card h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0.9rem 1rem 0.5rem;
+    color: var(--primary-color);
+    border-bottom: none;
+    text-align: left;
+    background: linear-gradient(to right, rgba(11,61,145,0.06), transparent);
+}
+
+.discover-card figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+.discover-card figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.discover-card address {
+    font-style: italic;
+    color: #666;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem 0;
+}
+
+.discover-card p {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    font-size: 0.92rem;
+    color: var(--text-color);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.learn-more-btn {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 0.75rem 1rem 1rem;
+    padding: 0.6rem 1rem;
+    background-color: var(--secondary-color);
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, transform 0.15s;
+}
+
+.learn-more-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: scale(1.02);
+}
+
+/* ─── SMALL SCREENS: Named Grid Areas (≤640px) ──────────────────── */
+/* Single column, all cards stacked */
+.discover-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+        "card5"
+        "card6"
+        "card7"
+        "card8";
+}
+
+.discover-grid .discover-card:nth-child(1) { grid-area: card1; }
+.discover-grid .discover-card:nth-child(2) { grid-area: card2; }
+.discover-grid .discover-card:nth-child(3) { grid-area: card3; }
+.discover-grid .discover-card:nth-child(4) { grid-area: card4; }
+.discover-grid .discover-card:nth-child(5) { grid-area: card5; }
+.discover-grid .discover-card:nth-child(6) { grid-area: card6; }
+.discover-grid .discover-card:nth-child(7) { grid-area: card7; }
+.discover-grid .discover-card:nth-child(8) { grid-area: card8; }
+
+/* ─── MEDIUM SCREENS: Named Grid Areas (641px – 1024px) ─────────── */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+    .discover-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "card1 card1"
+            "card2 card3"
+            "card4 card5"
+            "card6 card6"
+            "card7 card8";
+    }
+
+    /* Cards that span full width get taller hero-style images */
+    .discover-grid .discover-card:nth-child(1) figure img,
+    .discover-grid .discover-card:nth-child(6) figure img {
+        height: 240px;
+    }
+}
+
+/* ─── LARGE SCREENS: Named Grid Areas (≥1025px) ─────────────────── */
+@media screen and (min-width: 1025px) {
+    .discover-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "card1 card1 card2"
+            "card3 card4 card5"
+            "card6 card7 card8";
+    }
+
+    /* card1 spans 2 columns → hero image taller */
+    .discover-grid .discover-card:nth-child(1) {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .discover-grid .discover-card:nth-child(1) figure {
+        flex: 0 0 55%;
+    }
+
+    .discover-grid .discover-card:nth-child(1) figure img {
+        height: 100%;
+    }
+
+    .discover-grid .discover-card:nth-child(1) .card-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Hover image effect — ONLY on non-mobile (≥1025px) */
+    .discover-card figure img:hover {
+        transform: scale(1.06);
+        filter: brightness(1.1) saturate(1.2);
+    }
+}
