@@ -19,7 +19,7 @@
 
 .discover-intro {
     text-align: center;
-    color: #555;
+    color: var(--text-color);
     max-width: 700px;
     margin: 0 auto 1.5rem auto;
     font-size: 1.05rem;
@@ -27,16 +27,18 @@
 }
 
 /* ─── Visit Banner ──────────────────────────────────────────────── */
+/* Use solid background-color (not gradient) so contrast tools
+   can compute the correct white-on-blue ratio (~10:1 AA pass) */
 .visit-banner {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #1a5fbd 100%);
+    background-color: var(--primary-color);
     color: #ffffff;
     border-radius: 10px;
     padding: 0.9rem 1.25rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 12px rgba(11, 61, 145, 0.25);
+    box-shadow: 0 4px 12px var(--border-color);
     animation: slideIn 0.4s ease-out;
 }
 
@@ -54,6 +56,7 @@
     margin: 0;
     font-weight: 600;
     font-size: 1rem;
+    color: #ffffff;
 }
 
 /* ─── Cards Section ─────────────────────────────────────────────── */
@@ -66,7 +69,7 @@
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 10px var(--border-color);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -75,7 +78,7 @@
 
 .discover-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px var(--border-color);
 }
 
 .discover-card h2 {
@@ -85,7 +88,7 @@
     color: var(--primary-color);
     border-bottom: none;
     text-align: left;
-    background: linear-gradient(to right, rgba(11,61,145,0.06), transparent);
+    background-color: var(--card-bg);
 }
 
 .discover-card figure {
@@ -103,7 +106,7 @@
 
 .discover-card address {
     font-style: italic;
-    color: #666;
+    color: var(--text-color);
     font-size: 0.85rem;
     padding: 0.5rem 1rem 0;
 }
@@ -123,7 +126,7 @@
     margin: 0.75rem 1rem 1rem;
     padding: 0.6rem 1rem;
     background-color: var(--secondary-color);
-    color: #000;
+    color: #000000;
     border: none;
     border-radius: 6px;
     font-weight: 700;
@@ -134,12 +137,11 @@
 
 .learn-more-btn:hover {
     background-color: var(--primary-color);
-    color: #fff;
+    color: #ffffff;
     transform: scale(1.02);
 }
 
 /* ─── SMALL SCREENS: Named Grid Areas (≤640px) ──────────────────── */
-/* Single column, all cards stacked */
 .discover-grid {
     display: grid;
     gap: 1.25rem;
@@ -176,7 +178,7 @@
             "card7 card8";
     }
 
-    /* Cards that span full width get taller hero-style images */
+    /* Full-width feature cards get taller images */
     .discover-grid .discover-card:nth-child(1) figure img,
     .discover-grid .discover-card:nth-child(6) figure img {
         height: 240px;
@@ -193,16 +195,16 @@
             "card6 card7 card8";
     }
 
-    /* card1 spans 2 columns → make the image taller and more prominent */
+    /* card1 spans 2 columns — taller image to use the extra space */
     .discover-grid .discover-card:nth-child(1) figure img {
-        height: 280px;
+        height: 260px;
     }
 
     .discover-grid .discover-card:nth-child(1) h2 {
         font-size: 1.4rem;
     }
 
-    /* Hover image effect — ONLY on non-mobile (≥1025px) */
+    /* Hover image effect — desktop ONLY (not applied on mobile) */
     .discover-card figure img:hover {
         transform: scale(1.06);
         filter: brightness(1.1) saturate(1.2);
