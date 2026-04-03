@@ -6,7 +6,13 @@
     --bg-color: #f4f4f9;
     --card-bg: #ffffff;
     --border-color: #dddddd;
+    --white: #ffffff;
+    --black: #000000;
     --font-base: 'Roboto', sans-serif;
+    --shadow-sm: 0 4px 6px var(--border-color);
+    --shadow-md: 0 4px 10px var(--border-color);
+    --radius-sm: 4px;
+    --radius-md: 8px;
 }
 
 * {
@@ -22,10 +28,10 @@ body {
     line-height: 1.6;
 }
 
-/* Header & Nav */
+/* ─── Header & Nav ───────────────────────────────────────────────── */
 header {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: var(--white);
     padding: 1rem;
     position: relative;
     display: flex;
@@ -52,10 +58,9 @@ header .site-title {
 }
 
 .hamburger {
-    background: none;
     background-color: transparent;
     border: none;
-    color: #ffffff;
+    color: var(--white);
     font-size: 2rem;
     cursor: pointer;
 }
@@ -78,23 +83,23 @@ nav ul {
 
 nav li {
     text-align: center;
-    border-bottom: 1px solid #ffffff33;
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
     display: block;
-    color: #ffffff;
-    background-color: transparent;
+    color: var(--white);
     text-decoration: none;
     padding: 1rem;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
     background-color: var(--secondary-color);
-    color: #000;
+    color: var(--black);
 }
 
-/* Main Content */
+/* ─── Main Content ───────────────────────────────────────────────── */
 main {
     padding: 1rem;
     max-width: 1200px;
@@ -104,10 +109,9 @@ main {
 h2 {
     text-align: center;
     color: var(--primary-color);
-    background-color: transparent;
 }
 
-/* View Controls */
+/* ─── View Controls (Directory) ──────────────────────────────────── */
 .view-controls {
     text-align: center;
     margin-bottom: 1rem;
@@ -117,32 +121,31 @@ h2 {
     padding: 0.5rem 1rem;
     margin: 0 0.25rem;
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: var(--white);
     border: none;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
 }
 
 .view-btn:hover {
     background-color: var(--secondary-color);
-    color: #000000;
+    color: var(--black);
 }
 
-/* Members Container (Default: Grid layout, but single column on mobile) */
+/* ─── Members Container (Directory) ─────────────────────────────── */
 #members-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
 }
 
-/* Grid View Styles */
 #members-container.grid .member-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 6px #0000001a;
+    box-shadow: var(--shadow-sm);
 }
 
 .member-card img {
@@ -154,7 +157,6 @@ h2 {
 .member-card h3 {
     margin-top: 0;
     color: var(--primary-color);
-    background-color: transparent;
 }
 
 .member-card p {
@@ -163,7 +165,6 @@ h2 {
 
 .member-card a {
     color: var(--primary-color);
-    background-color: transparent;
     text-decoration: none;
     font-weight: 500;
 }
@@ -171,10 +172,9 @@ h2 {
 .member-card a:hover {
     text-decoration: underline;
     color: var(--secondary-color);
-    background-color: transparent;
 }
 
-/* List View Styles */
+/* List View */
 #members-container.list {
     display: block;
 }
@@ -189,27 +189,28 @@ h2 {
 }
 
 #members-container.list .member-card img {
-    display: none; /* Hide images in list view */
+    display: none;
 }
 
 #members-container.list .member-card h3 {
     margin: 0 0 0.5rem 0;
 }
 
-/* Footer */
+/* ─── Footer ─────────────────────────────────────────────────────── */
 footer {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: var(--white);
     text-align: center;
     padding: 2rem 1rem;
     margin-top: 2rem;
 }
 
-.footer-info p, .footer-meta p {
+.footer-info p,
+.footer-meta p {
     margin: 0.5rem 0;
 }
 
-/* Home Page Styles */
+/* ─── Home Page ──────────────────────────────────────────────────── */
 .hero {
     position: relative;
     margin-bottom: 2rem;
@@ -226,26 +227,26 @@ footer {
     position: absolute;
     bottom: 10%;
     right: 10%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--card-bg);
     padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
 }
 
 .cta-button {
     display: inline-block;
     background-color: var(--secondary-color);
-    color: #000;
+    color: var(--black);
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     transition: background-color 0.3s, color 0.3s;
 }
 
 .cta-button:hover {
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -258,9 +259,9 @@ footer {
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     padding: 1.5rem;
-    box-shadow: 0 4px 6px #0000001a;
+    box-shadow: var(--shadow-sm);
 }
 
 .card h2 {
@@ -280,7 +281,7 @@ footer {
 
 .events-list li {
     margin-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
 
@@ -296,10 +297,10 @@ footer {
 
 .spotlight-item {
     text-align: center;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
     padding: 1rem;
-    border-radius: 4px;
-    background-color: #fcfcfc;
+    border-radius: var(--radius-sm);
+    background-color: var(--card-bg);
 }
 
 .spotlight-item h3 {
