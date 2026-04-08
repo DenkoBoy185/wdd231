@@ -43,6 +43,7 @@ function renderCards(books) {
           width="200"
           height="280"
           loading="lazy"
+          data-fallback="${book.id}"
         >
       </figure>
       <div class="card-body">
@@ -66,6 +67,14 @@ function renderCards(books) {
   // Attach click listeners to all detail buttons
   grid.querySelectorAll('.details-btn').forEach(btn => {
     btn.addEventListener('click', () => openModal(Number(btn.dataset.id)));
+  });
+
+  // Fallback for broken cover images
+  grid.querySelectorAll('img[data-fallback]').forEach(img => {
+    img.addEventListener('error', function handler() {
+      this.removeEventListener('error', handler);
+      this.src = `https://picsum.photos/seed/${this.dataset.fallback}cover/200/280`;
+    });
   });
 }
 
@@ -178,7 +187,12 @@ function openModal(id) {
   const isInList   = getSavedList().some(s => s.id === b.id);
   const statusMap  = { completed: 'Completed', reading: 'Currently Reading', 'plan-to-read': 'Plan to Read' };
 
-  document.getElementById('modal-cover').src        = b.cover.replace('/200/280', '/240/336');
+  const coverEl = document.getElementById('modal-cover');
+  coverEl.src    = b.cover;
+  coverEl.onerror = () => {
+    coverEl.onerror = null;
+    coverEl.src = `https://picsum.photos/seed/${b.id}modal/240/336`;
+  };
   document.getElementById('modal-cover').alt        = `Cover of ${b.title}`;
   document.getElementById('modal-title').textContent = b.title;
   document.getElementById('modal-author').textContent = `by ${b.author}`;
