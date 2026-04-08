@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PageTurner – handpicked recommendations for the best books and manga. Discover your next favourite read today.">
+  <meta name="author" content="Bruno Emerson Monsefu Gonzales">
+
+  <title>PageTurner | Your Next Great Read Awaits</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="PageTurner | Book & Manga Recommendations">
+  <meta property="og:description" content="Handpicked recommendations for the best books and manga. Discover your next great read.">
+  <meta property="og:image"       content="https://denkoboy185.github.io/wdd231/final/images/og.jpg">
+  <meta property="og:url"         content="https://denkoboy185.github.io/wdd231/final/index.html">
+  <meta property="og:type"        content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Scripts -->
+  <script src="scripts/main.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="PageTurner Home">
+        <span class="brand-icon">📖</span>
+        <span class="brand-name">PageTurner<span class="brand-sub">Books & Manga</span></span>
+      </a>
+      <button id="menu-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <nav id="primary-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="favorites.html">My List</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Your Next <span class="accent-word">Great Read</span> Awaits</h1>
+        <p>Handpicked recommendations spanning the best epic books and manga — curated for adventurous readers.</p>
+        <a href="catalog.html" class="hero-cta">
+          <span>📚</span> Explore the Catalog
+        </a>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <span class="stat-num">17</span>
+          <span class="stat-label">Titles</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">10</span>
+          <span class="stat-label">Manga Series</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">7</span>
+          <span class="stat-label">Books</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Genres</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Picks -->
+    <section class="section-wrap">
+      <div style="text-align:center; margin-bottom:.75rem;">
+        <h2 class="section-title">⭐ Editor's Picks</h2>
+        <p class="section-sub">A few titles the curator absolutely loves</p>
+        <hr class="divider">
+      </div>
+      <div class="featured-grid">
+
+        <!-- Pick 1 -->
+        <a href="catalog.html" class="featured-card">
+          <img
+            class="featured-cover"
+            src="https://picsum.photos/seed/fma2001/200/280"
+            alt="Cover of Fullmetal Alchemist"
+            width="88" height="124"
+            loading="lazy"
+          >
+          <div class="featured-body">
+            <span class="type-badge manga">Manga</span>
+            <h3 class="featured-title">Fullmetal Alchemist</h3>
+            <p class="featured-author">Hiromu Arakawa</p>
+            <p class="featured-genre">Fantasy · 2001</p>
+            <p class="featured-stars">★★★★★ 4.9</p>
+            <p class="featured-desc">Two alchemist brothers search for the Philosopher's Stone to restore their bodies — a masterpiece of storytelling and philosophy.</p>
+          </div>
+        </a>
+
+        <!-- Pick 2 -->
+        <a href="catalog.html" class="featured-card">
+          <img
+            class="featured-cover"
+            src="https://picsum.photos/seed/dune1965/200/280"
+            alt="Cover of Dune"
+            width="88" height="124"
+            loading="lazy"
+          >
+          <div class="featured-body">
+            <span class="type-badge book">Book</span>
+            <h3 class="featured-title">Dune</h3>
+            <p class="featured-author">Frank Herbert</p>
+            <p class="featured-genre">Sci-Fi · 1965</p>
+            <p class="featured-stars">★★★★★ 4.8</p>
+            <p class="featured-desc">On the desert planet Arrakis, young Paul Atreides navigates political intrigue and destiny. The greatest sci-fi novel ever written.</p>
+          </div>
+        </a>
+
+        <!-- Pick 3 -->
+        <a href="catalog.html" class="featured-card">
+          <img
+            class="featured-cover"
+            src="https://picsum.photos/seed/berserk89/200/280"
+            alt="Cover of Berserk"
+            width="88" height="124"
+            loading="lazy"
+          >
+          <div class="featured-body">
+            <span class="type-badge manga">Manga</span>
+            <h3 class="featured-title">Berserk</h3>
+            <p class="featured-author">Kentaro Miura</p>
+            <p class="featured-genre">Dark Fantasy · 1989</p>
+            <p class="featured-stars">★★★★★ 4.9</p>
+            <p class="featured-desc">One of the most visually stunning and emotionally devastating manga ever created. An absolute masterpiece of dark fantasy.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-band">
+      <div class="about-inner">
+        <h2>About PageTurner</h2>
+        <p>PageTurner is a personal curation project dedicated to finding the best books and manga across every genre. Whether you enjoy sweeping epic fantasy, mind-bending science fiction, or emotionally gripping manga, there's something here for every reader. Browse the full catalog, save titles to your reading list, and share your own recommendations with friends.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="favorites.html">My List</a>
+        <a href="attributions.html">Attributions</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener">📹 Video Demo</a>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="current-year"></span> Bruno Emerson Monsefu Gonzales · WDD 231</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

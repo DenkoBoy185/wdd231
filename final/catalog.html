@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the full PageTurner catalog of 17 curated book and manga recommendations. Filter by type and genre, search by title or author, and save favourites.">
+  <meta name="author" content="Bruno Emerson Monsefu Gonzales">
+
+  <title>Catalog | PageTurner Book & Manga Recommendations</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Catalog | PageTurner">
+  <meta property="og:description" content="Browse 17 curated book and manga recommendations with ratings, genres, and full details.">
+  <meta property="og:image"       content="https://denkoboy185.github.io/wdd231/final/images/og.jpg">
+  <meta property="og:url"         content="https://denkoboy185.github.io/wdd231/final/catalog.html">
+  <meta property="og:type"        content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Scripts -->
+  <script src="scripts/main.js" defer></script>
+  <script type="module" src="scripts/catalog.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="PageTurner Home">
+        <span class="brand-icon">📖</span>
+        <span class="brand-name">PageTurner<span class="brand-sub">Books & Manga</span></span>
+      </a>
+      <button id="menu-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <nav id="primary-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html" class="active">Catalog</a></li>
+          <li><a href="favorites.html">My List</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+
+    <!-- Page Header -->
+    <div class="page-heading">
+      <h1>📚 Full Catalog</h1>
+      <p>17 curated recommendations — filter, search, and save your favourites</p>
+    </div>
+
+    <!-- Controls: Search + Filters -->
+    <div class="controls-bar">
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search by title or author…"
+          aria-label="Search catalog"
+        >
+      </div>
+      <div class="filter-row" role="group" aria-label="Filter catalog">
+        <span class="filter-label">Filter:</span>
+        <button class="filter-btn active" data-filter="all"    type="button">All</button>
+        <button class="filter-btn"        data-filter="manga"  type="button">Manga</button>
+        <button class="filter-btn"        data-filter="book"   type="button">Books</button>
+        <button class="filter-btn"        data-filter="action" type="button">Action</button>
+        <button class="filter-btn"        data-filter="fantasy"type="button">Fantasy</button>
+        <button class="filter-btn"        data-filter="sci-fi" type="button">Sci-Fi</button>
+        <button class="filter-btn"        data-filter="comedy" type="button">Comedy</button>
+        <button class="filter-btn"        data-filter="thriller"type="button">Thriller</button>
+      </div>
+    </div>
+
+    <p class="result-bar" aria-live="polite" id="result-count">Loading…</p>
+
+    <!-- Cards injected by catalog.js -->
+    <div id="catalog-grid" class="catalog-grid" aria-label="Book and manga catalog"></div>
+
+    <!-- Detail Modal -->
+    <dialog id="item-modal" class="book-modal" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <div class="modal-cover-wrap">
+          <img id="modal-cover" src="" alt="" width="90" height="126" loading="lazy">
+        </div>
+        <div class="modal-header-text">
+          <span id="modal-type" class="modal-type-badge"></span>
+          <h2 id="modal-title"></h2>
+          <p id="modal-author"></p>
+        </div>
+        <button id="modal-close" class="modal-close" aria-label="Close dialog">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta-grid">
+          <div class="meta-item">
+            <p class="meta-label">Genre</p>
+            <p class="meta-value" id="modal-genre"></p>
+          </div>
+          <div class="meta-item">
+            <p class="meta-label">Year</p>
+            <p class="meta-value" id="modal-year"></p>
+          </div>
+          <div class="meta-item">
+            <p class="meta-label">Length</p>
+            <p class="meta-value" id="modal-length"></p>
+          </div>
+          <div class="meta-item">
+            <p class="meta-label">Status</p>
+            <p class="meta-value" id="modal-status"></p>
+          </div>
+        </div>
+        <div class="modal-rating-row" id="modal-rating" aria-label="Rating"></div>
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-tags" id="modal-tags"></div>
+        <button id="modal-add-btn" type="button">+ Add to Reading List</button>
+      </div>
+    </dialog>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="favorites.html">My List</a>
+        <a href="attributions.html">Attributions</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener">📹 Video Demo</a>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="current-year"></span> Bruno Emerson Monsefu Gonzales · WDD 231</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

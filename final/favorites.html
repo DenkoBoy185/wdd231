@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your personal reading list on PageTurner. Save your favourite books and manga, and recommend titles to friends.">
+  <meta name="author" content="Bruno Emerson Monsefu Gonzales">
+
+  <title>My Reading List | PageTurner</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="My Reading List | PageTurner">
+  <meta property="og:description" content="Save books and manga to your personal reading list and recommend titles to friends.">
+  <meta property="og:image"       content="https://denkoboy185.github.io/wdd231/final/images/og.jpg">
+  <meta property="og:url"         content="https://denkoboy185.github.io/wdd231/final/favorites.html">
+  <meta property="og:type"        content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Scripts -->
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/favorites.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="PageTurner Home">
+        <span class="brand-icon">📖</span>
+        <span class="brand-name">PageTurner<span class="brand-sub">Books & Manga</span></span>
+      </a>
+      <button id="menu-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <nav id="primary-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="favorites.html" class="active">My List</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+
+    <!-- Page Header -->
+    <div class="page-heading">
+      <h1>📋 My Reading List</h1>
+      <p>Recommend titles to friends or manage your personal saved list</p>
+    </div>
+
+    <div class="favorites-layout">
+
+      <!-- Recommend a Book Form -->
+      <section class="form-card" aria-label="Recommend a title">
+        <h2>Recommend a Title</h2>
+        <p class="form-intro">Know a friend who needs a great read? Fill out the form below to send them a recommendation.</p>
+
+        <form id="recommend-form" method="get" action="thankyou.html" novalidate>
+
+          <div class="form-field">
+            <label for="rec-title">
+              Book / Manga Title <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="rec-title"
+              name="rec-title"
+              placeholder="e.g. Fullmetal Alchemist"
+              required
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="rec-author">
+              Author <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="rec-author"
+              name="rec-author"
+              placeholder="e.g. Hiromu Arakawa"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="rec-type">
+              Type <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <select id="rec-type" name="rec-type" required>
+              <option value="" disabled selected>— Select —</option>
+              <option value="Book">Book</option>
+              <option value="Manga">Manga</option>
+              <option value="Light Novel">Light Novel</option>
+              <option value="Graphic Novel">Graphic Novel</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="rec-rating">
+              Your Rating <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <select id="rec-rating" name="rec-rating" required>
+              <option value="" disabled selected>— Select —</option>
+              <option value="5 - Masterpiece">⭐⭐⭐⭐⭐ Masterpiece</option>
+              <option value="4 - Great">⭐⭐⭐⭐ Great</option>
+              <option value="3 - Good">⭐⭐⭐ Good</option>
+              <option value="2 - Fair">⭐⭐ Fair</option>
+              <option value="1 - Poor">⭐ Poor</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="rec-friend-name">
+              Friend's Name <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="rec-friend-name"
+              name="rec-friend-name"
+              placeholder="e.g. Alex"
+              required
+              pattern="[A-Za-z\- ]{2,}"
+              title="Please enter your friend's name (letters, hyphens, spaces; min. 2 characters)"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="rec-message">Why you recommend it</label>
+            <textarea
+              id="rec-message"
+              name="rec-message"
+              placeholder="Tell your friend why they'll love it…"
+            ></textarea>
+          </div>
+
+          <!-- Hidden timestamp -->
+          <input type="hidden" id="timestamp" name="timestamp">
+
+          <p class="required-note"><span class="required-star" aria-hidden="true">*</span> Required fields</p>
+          <button type="submit" class="submit-btn">Send Recommendation →</button>
+        </form>
+      </section>
+
+      <!-- Saved Reading List (from localStorage) -->
+      <section class="list-section" aria-label="Saved reading list">
+        <div class="list-header">
+          <h2>Saved Titles</h2>
+          <span class="list-count-badge" id="list-count">0</span>
+        </div>
+        <div id="reading-list" aria-live="polite">
+          <!-- Injected by favorites.js -->
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <dialog id="confirm-modal" class="confirm-modal" aria-modal="true" aria-labelledby="confirm-heading">
+      <h2 id="confirm-heading">Remove Title?</h2>
+      <p>Are you sure you want to remove <strong id="confirm-title"></strong> from your reading list?</p>
+      <div class="confirm-actions">
+        <button id="confirm-yes" class="btn-danger"     type="button">Yes, Remove</button>
+        <button id="confirm-no"  class="btn-secondary"  type="button">Cancel</button>
+      </div>
+    </dialog>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="favorites.html">My List</a>
+        <a href="attributions.html">Attributions</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener">📹 Video Demo</a>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="current-year"></span> Bruno Emerson Monsefu Gonzales · WDD 231</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
