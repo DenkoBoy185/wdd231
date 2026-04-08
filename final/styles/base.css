@@ -681,3 +681,15 @@ a { color: var(--accent); }
   transition: background .2s, transform .15s;
 }
 .back-btn:hover { background: var(--primary-hov); transform: translateY(-1px); }
+
+/* ─────────────────────────────────────────────────
+   ATTRIBUTIONS PAGE
+   ───────────────────────────────────────────────── */
+.attrib-section { max-width: 760px; margin: 0 auto; }
+.attrib-h2 {
+  font-family: var(--font-h);
+  color: var(--primary);
+  margin: 2rem 0 1rem;
+}
+.attrib-h2--first { margin-top: 0; margin-bottom: 1rem; }
+

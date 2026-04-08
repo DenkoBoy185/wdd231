@@ -6,7 +6,15 @@
   <meta name="description" content="Attributions and sources for content used on PageTurner Book and Manga Recommendations.">
   <meta name="author" content="Bruno Emerson Monsefu Gonzales">
   <title>Attributions | PageTurner</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Attributions | PageTurner">
+  <meta property="og:description" content="Sources and credits for images, fonts, and tools used on PageTurner Book and Manga Recommendations.">
+  <meta property="og:image"       content="https://denkoboy185.github.io/wdd231/final/images/og.png">
+  <meta property="og:url"         content="https://denkoboy185.github.io/wdd231/final/attributions.html">
+  <meta property="og:type"        content="website">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +28,7 @@
     <div class="header-inner">
       <a href="index.html" class="brand" aria-label="PageTurner Home">
         <span class="brand-icon">📖</span>
-        <span class="brand-name">PageTurner<span class="brand-sub">Books & Manga</span></span>
+        <span class="brand-name">PageTurner<span class="brand-sub">Books &amp; Manga</span></span>
       </a>
       <button id="menu-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
       <nav id="primary-nav" aria-label="Main navigation">
@@ -39,26 +47,27 @@
       <p>Sources and credits for content used on PageTurner</p>
     </div>
 
-    <section style="max-width:760px; margin:0 auto;">
-      <h2 style="font-family:var(--font-h); color:var(--primary); margin-bottom:1rem;">Images</h2>
-      <p>All cover placeholder images are served by <a href="https://picsum.photos" target="_blank" rel="noopener">Lorem Picsum</a> (picsum.photos), a free image placeholder service. No copyright images of actual book or manga covers are used.</p>
+    <section class="attrib-section">
+      <h2 class="attrib-h2 attrib-h2--first">Images</h2>
+      <p>Manga cover images are sourced from <a href="https://myanimelist.net" target="_blank" rel="noopener">MyAnimeList</a> via the public Jikan API (jikan.moe). Book cover images are sourced from <a href="https://openlibrary.org" target="_blank" rel="noopener">Open Library</a> (covers.openlibrary.org) using their free ISBN cover API. All images belong to their respective copyright holders and are used for educational, non-commercial purposes only.</p>
 
-      <h2 style="font-family:var(--font-h); color:var(--primary); margin:2rem 0 1rem;">Fonts</h2>
+      <h2 class="attrib-h2">Fonts</h2>
       <ul>
         <li><a href="https://fonts.google.com/specimen/Playfair+Display" target="_blank" rel="noopener">Playfair Display</a> – Google Fonts (SIL Open Font License)</li>
         <li><a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">Inter</a> – Google Fonts (SIL Open Font License)</li>
       </ul>
 
-      <h2 style="font-family:var(--font-h); color:var(--primary); margin:2rem 0 1rem;">Book & Manga Information</h2>
+      <h2 class="attrib-h2">Book &amp; Manga Information</h2>
       <p>All book and manga descriptions were written by the site author (Bruno Emerson Monsefu Gonzales) and are original summaries. Publication years, author names, volume/page counts are factual reference information from public knowledge.</p>
 
-      <h2 style="font-family:var(--font-h); color:var(--primary); margin:2rem 0 1rem;">Tools & Technologies</h2>
+      <h2 class="attrib-h2">Tools &amp; Technologies</h2>
       <ul>
         <li>HTML5, CSS3, Vanilla JavaScript – no third-party frameworks used</li>
         <li>ES Modules for JavaScript code organisation</li>
         <li>Browser Fetch API for loading catalog data</li>
         <li>Web Storage API (localStorage) for reading list persistence</li>
         <li>HTML <code>&lt;dialog&gt;</code> element for accessible modal dialogs</li>
+        <li>Open Graph social media metadata on all pages</li>
       </ul>
     </section>
   </main>
